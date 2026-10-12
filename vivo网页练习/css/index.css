@@ -1,0 +1,242 @@
+ :root {
+   --vivo-blue: #1976d2;
+   --vivo-cyan: #00e5ff;
+   --vivo-purple: #7b1fa2;
+   --vivo-dark: #121212;
+   --vivo-card-bg: #1e1e1e;
+   --neon-glow: 0 0 10px rgba(0, 229, 255, 0.7),
+     0 0 20px rgba(0, 229, 255, 0.5),
+     0 0 30px rgba(0, 229, 255, 0.3);
+ }
+
+ body {
+   font-family: 'Montserrat', sans-serif;
+   background-color: var(--vivo-dark);
+   color: #fff;
+   overflow-x: hidden;
+ }
+ /* 顶部导航栏 */
+ .navbar {
+    background-color: rgb(18,18,18,0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255.255.255.0.1);
+    padding: 15px 0;
+ }
+ .navbar-brand {
+  font-size: 25px;
+  font-weight: 700;
+  background: linear-gradient(45deg,var(--vivo-cyan),var(--vivo-blue));
+  /*文字裁剪*/
+  -webkit-background-clip: text;
+  background-clip: text;
+  color:transparent;
+  text-shadow: var(--neon-glow);
+ }
+
+ .nav-link {
+   position: relative;
+  color:rgb(255,255,255,0.9);
+  margin: 0 12px;
+ }
+ .nav-link:hover {
+  text-shadow: var(--neon-glow);
+  color:var(--vivo-cyan);
+ }
+ .nav-link::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color:var(--vivo-cyan);
+  transition: all .3s;
+ }
+ .nav-link:hover::after {
+  width: 100%;
+
+ }
+ .nav-right a{
+  font-size: 1rem;
+  color:rgb(255,255,255,0.7);
+  padding: 10px;
+ }
+ .nav-right a:hover {
+  text-shadow: var(--neon-glow);
+  color:var(--vivo-cyan);
+ }
+ /* 轮播图 */
+ .banner {
+  width: 100%;
+  height: 50vw;
+  background-color: pink;
+ }
+ .banner .carousel-item img {
+  height: 100%;
+  height: 50vw;
+ }
+ /* 热门产品模块 */
+ .hot-product .info {
+  color:rgb(255,255,255,0.7)
+ }
+ /*卡片模块*/
+ .card {
+  background-color: var(--vivo-card-bg);
+  border-radius: 15px;
+  border: 1px solid rgb(255,255,255,0.1);
+  /* 超出隐藏 */
+  overflow: hidden;
+  transition: all 0.3s;
+ }
+ .card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 229, 255, 0.4);
+ }
+ .card-img {
+  padding: 20px;
+  background-color: rgba(72, 69, 69, 0.4);
+ }
+ .card-img img {
+  animation: move 3s linear infinite;
+ }
+ @keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+ }
+ .card-title {
+  font-size: 1.4rem;
+  color:#fff;
+ }
+ .card-text {
+  font-size: 0.9rem;
+  color:rgb(255,255,255,0.7);
+ }
+ .price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:var(--vivo-cyan);
+ }
+ .card-body .btn {/*.card-body会让.btn优先级高于.btn-primary*/
+  width: 100%;
+  background:none;
+  color:var(--vivo-cyan);
+  border-radius: 30px;
+  border: 2px solid var(--vivo-cyan);
+ }
+ .btn:hover {
+  box-shadow: var(--neon-glow);
+ }
+ /* 未来科技模块 */
+ .future-tech {
+  position: relative;
+  background: url("../img/bg1.avif") no-repeat;
+  background-position: center;/*背景居中对齐*/
+  height: 600px;
+  background-attachment: fixed;/*背景固定*/
+}
+ .future-tech::before {
+  position: absolute;
+  content:'';
+  left:0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(18,18,18,0.9);
+ }
+  .future-tech .icon {
+  font-size: 3rem;
+  color:var(--vivo-cyan);
+  text-shadow: var(--neon-glow);
+}
+.future-tech .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.future-tech .text {
+  color:rgb(255,255,255,0.7);
+}
+/* 网页底部 */
+.footer {
+  background-color: #0a0a0a;
+  margin-top: 8px;
+  height: 400px;
+}
+.footer .row .title {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.footer .row .title::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 40px;
+  background: linear-gradient(90deg,var(--vivo-cyan),var(--vivo-blue));
+} 
+.footer dd a {
+  display:block;/*块级元素移动才起效*/
+  color:rgb(255,255,255,0.7);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+
+}
+.footer dd a:hover {
+  color:var(--vivo-cyan);
+  transform: translateX(5px);
+}
+.icons {
+  gap: 15px;
+  display:flex;
+}
+.icons a {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  background:none;
+  background-color: rgba(43, 42, 42, 0.95);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.icons a:hover {
+  transform: translateY(-5px);
+  background-color: var(--vivo-cyan);
+  box-shadow: var(--neon-glow);
+}
+.icons i {
+  font-size: 1.3rem;
+  width: 100%;
+  height: 100%;
+  color:#fff;
+}
+.news {
+  color: rgb(255,255,255,0.7);
+}
+.input-group {
+  height: 50px;
+}
+.form-control::placeholder {
+  color: rgb(255,255,255,0.7);
+}
+.input-group .btn {
+  color:#fff;
+  height: 100%;
+  width: 30%;
+  border: none;
+  background: linear-gradient(var(--vivo-cyan),var(--vivo-blue));
+  border-radius: 30px;
+}
+.version {
+  color:rgb(255,255,255,0.7);
+}
